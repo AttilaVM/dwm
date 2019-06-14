@@ -62,14 +62,14 @@ static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_bracketleft,       spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_bracketright,      spawn,          {.v = dmenu_run_scripts } },
+	{ MODKEY,                       XK_apostrophe,       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_semicolon,      spawn,          {.v = dmenu_run_scripts } },
 	{ MODKEY|ShiftMask,             XK_Return,            spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_period,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_comma,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -87,12 +87,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_t,                      0)
-	TAGKEYS(                        XK_y,                      1)
-	TAGKEYS(                        XK_u,                      2)
-	TAGKEYS(                        XK_i,                      3)
-	TAGKEYS(                        XK_o,                      4)
-	TAGKEYS(                        XK_p,                      5)
+	TAGKEYS(                        XK_u,                      0)
+	TAGKEYS(                        XK_i,                      1)
+	TAGKEYS(                        XK_o,                      2)
+	TAGKEYS(                        XK_p,                      3)
+	TAGKEYS(                        XK_bracketleft,                      4)
+	TAGKEYS(                        XK_bracketright,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
