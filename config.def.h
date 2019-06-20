@@ -63,8 +63,11 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_apostrophe,       spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_semicolon,      spawn,          {.v = dmenu_run_scripts } },
-	{ MODKEY|ShiftMask,             XK_Return,            spawn,          {.v = termcmd } },
+  // Hungarian variant
+	{ MODKEY,                       XK_aacute,       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_semicolon,        spawn,          {.v = dmenu_run_scripts } },
+	{ MODKEY,                       XK_eacute,           spawn,          {.v = dmenu_run_scripts } },
+	{ MODKEY|ShiftMask,             XK_Return,           spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -76,6 +79,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_equal,  killclient,     {0} },
+  // Hungarian variant
+	{ MODKEY,                       XK_oacute, killclient,     {0} },
 	{ MODKEY,                       XK_n,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -84,15 +89,20 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	/* { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } }, */
-	{ MODKEY,                       XK_backslash, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_backslash,  tagmon,         {.i = -1 } },
+	{ MODKEY,                       XK_backslash, focusmon,    {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_backslash,  tagmon,     {.i = -1 } },
+  // Hungarian variant
+	{ MODKEY,                       XK_udoubleacute, focusmon, {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_udoubleacute,  tagmon,  {.i = -1 } },
 	/* { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } }, */
 	TAGKEYS(                        XK_u,                      0)
 	TAGKEYS(                        XK_i,                      1)
 	TAGKEYS(                        XK_o,                      2)
 	TAGKEYS(                        XK_p,                      3)
-	TAGKEYS(                        XK_bracketleft,                      4)
-	TAGKEYS(                        XK_bracketright,                      5)
+	TAGKEYS(                        XK_bracketleft,            4)
+	TAGKEYS(                        XK_bracketright,           5)
+	TAGKEYS(                        XK_odoubleacute,           4)
+	TAGKEYS(                        XK_uacute,                 5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
