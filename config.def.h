@@ -26,10 +26,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class               instance    title       tags mask     isfloating   monitor */
-  { "stalonetray",       NULL,       NULL,       1 << 8,       1,           -1 },
-	{ "Emacs",             NULL,       NULL,       1,            0,           -1 },
-	{ "Google-chrome",     NULL,       NULL,       1 << 1,       0,           -1 },
+	/* class               instance       title       tags mask     isfloating   monitor */
+  { "stalonetray",       NULL,          NULL,       1 << 8,       1,           -1 },
+	{ NULL,                "emacs-dev",   NULL,       1,            0,           -1 },
+	{ "Google-chrome",     NULL,          NULL,       1 << 1,       0,           -1 },
+	{ NULL,                "emacs-read",  NULL,       1 << 2,       0,           -1 },
+	{ "st-256color",       NULL,          NULL,       1 << 3,       0,           -1 },
+	{ "Zotero",            NULL,          NULL,       1 << 4,       0,           -1 },
 };
 
 /* layout(s) */
