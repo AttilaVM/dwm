@@ -60,17 +60,18 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "rofi", "-show", "run", NULL };
-static const char *dmenu_run_scripts[]  = { "dmenu-run-scripts", NULL };
+static const char *dmenucmd[] = { "rofi-run-app", NULL };
+static const char *dmenu_run_scripts[]  = { "rofi-run-scripts", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_apostrophe,       spawn,          {.v = dmenucmd } },
-  // Hungarian variant
-	{ MODKEY,                       XK_aacute,       spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_aacute,           spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_a,                spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_semicolon,        spawn,          {.v = dmenu_run_scripts } },
 	{ MODKEY,                       XK_eacute,           spawn,          {.v = dmenu_run_scripts } },
+	{ MODKEY,                       XK_s,                spawn,          {.v = dmenu_run_scripts } },
 	{ MODKEY|ShiftMask,             XK_Return,           spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -83,6 +84,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_equal,  killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_Escape, killclient,     {0} },
   // Hungarian variant
 	{ MODKEY,                       XK_oacute, killclient,     {0} },
 	{ MODKEY,                       XK_n,      setlayout,      {.v = &layouts[0]} },
