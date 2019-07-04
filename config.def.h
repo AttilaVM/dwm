@@ -62,7 +62,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "rofi-run-app", NULL };
 static const char *dmenu_run_scripts[]  = { "rofi-run-scripts", NULL };
+static const char *password_store_clipboard[]  = { "password-store-clipboard", NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *slock[]  = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -73,6 +75,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_eacute,           spawn,          {.v = dmenu_run_scripts } },
 	{ MODKEY,                       XK_s,                spawn,          {.v = dmenu_run_scripts } },
 	{ MODKEY|ShiftMask,             XK_Return,           spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_l,                spawn,          {.v = slock }},
+	{ MODKEY|ShiftMask,             XK_k,                spawn,          {.v = password_store_clipboard }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
