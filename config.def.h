@@ -38,7 +38,9 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+// Size hints feature prevents most applications fill the bottom of the screen in tiled layout.
+// https://www.reddit.com/r/suckless/comments/7gljt9/st_dwm_not_filling_screen_fully/
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
