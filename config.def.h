@@ -65,6 +65,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi-run-app", NULL };
 static const char *dmenu_run_scripts[]  = { "rofi-run-scripts", NULL };
 static const char *password_store_clipboard[]  = { "password-store-clipboard", NULL };
+static const char *search_document[]  = { "search-document", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *slock[]  = { "slock", NULL };
 
@@ -79,6 +80,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,           spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_l,                spawn,          {.v = slock }},
 	{ MODKEY|ShiftMask,             XK_k,                spawn,          {.v = password_store_clipboard }},
+	{ MODKEY|ShiftMask,             XK_j,                spawn,          {.v = search_document }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
