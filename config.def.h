@@ -66,6 +66,7 @@ static const char *dmenucmd[] = { "rofi-run-app", NULL };
 static const char *dmenu_run_scripts[]  = { "rofi-run-scripts", NULL };
 static const char *password_store_clipboard[]  = { "password-store-clipboard", NULL };
 static const char *search_document[]  = { "search-document", NULL };
+static const char *clipboard_history[]  = { "clipboard-history", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *slock[]  = { "slock", NULL };
 
@@ -81,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,                spawn,          {.v = slock }},
 	{ MODKEY|ShiftMask,             XK_k,                spawn,          {.v = password_store_clipboard }},
 	{ MODKEY|ShiftMask,             XK_j,                spawn,          {.v = search_document }},
+	{ MODKEY|ShiftMask,             XK_h,                spawn,          {.v = clipboard_history }},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
